@@ -1,0 +1,33 @@
+<div>
+
+	<%= form_for @profile do |f| %>
+
+		<div class="row">
+			<div class="input-field col s4">
+			  <%= f.label :age %>
+			  <%= f.text_field :age %>
+		  </div>	
+			<div class="input-field col s4">
+			  <%= f.label :episode, "Favorite Episode" %>
+			  <%= f.text_field :episode, placeholder: "e.g. The Junior Mint" %>
+		  </div>
+		  <div class="input-field col s4">
+			<%= f.label :character, "Favorite Character" %>
+			<%= f.text_field :character, placeholder: "e.g. Kramer" %>
+			</div>
+	  </div>
+
+		<div class="row">
+			<div class="input-field col s12">
+				<textarea id="textarea1" class="materialize-textarea" placeholder="e.g. My name is George. I'm unemployed and I live with my parents."></textarea>
+        <label for="textarea1">Bio</label>
+			</div>
+		</div>
+
+		<div class="actions waves-effect waves-light btn">
+	  	<%= f.submit %>
+	  </div>
+
+	<% end %>
+
+</div>
