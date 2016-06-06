@@ -1,16 +1,44 @@
-<h1>Welcome, <%= current_user.first_name %>!</h1>
 
 
-<% 20.times do %>
-<%= "welcome to this website" %><br>
+
+
+
+<% if current_user %>
+	<h1>Welcome, <%= current_user.first_name %>!</h1>
+
+	<% 20.times do %>
+	<%= "welcome to this website" %><br>
+	<% end %>
+
+	<p><%= link_to 'Build Profile', new_profile_path %></p>
+
+	<p><%= link_to "Edit Profile", edit_user_registration_path %></p>
+
+	<p><%= link_to "Log Out", destroy_user_session_path, method: :delete, data: {confirm: 'Really log out?'}%></p>
+
+
+<% else %>
+	<div id="index-banner">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Pudding Skin Singles</h1>
+        <div class="row center">
+          <br>
+          <h5 class="header col s12 light">A community for Seinfeld fans</h5>
+					<br>
+        </div>
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 <% end %>
-
-
-
-
-<p><%= link_to 'Build Profile', new_profile_path %></p>
-
-
-<p><%= link_to "Edit Profile", edit_user_registration_path %></p>
-
-<p><%= link_to "Log Out", destroy_user_session_path, method: :delete, data: {confirm: 'Really log out?'}%></p>
