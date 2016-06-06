@@ -12,10 +12,10 @@ class ProfilesController < ApplicationController
   end
 
   def create
-  	@profile = @user.profiles.new(profile_params)
+  	@profile = Profile.new(profile_params)
   	@profile.user_id = current_user.id
   	if @profile.save
-  		redirect_to profile_index_path
+  		redirect_to profile_path(@profile)
   	else
   		render :new
   	end
